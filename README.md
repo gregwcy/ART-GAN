@@ -68,9 +68,11 @@ Some extensions were made to the model:
 
 ### Model Evaluation
 **Model 1**: The baseline model took approximately 2 days to run through 150 epochs. Training losses did not fluctuate much, the discriminator loss hovered from 0 to 1 and generator loss generally was in the range of 2 to 5. Model accuracy did improve through the first few epochs but stayed at 90+% over most epochs. However the results still gradually improved as shown below:
+
 ![image](https://user-images.githubusercontent.com/49399188/128222514-b682bd03-80c5-43e0-b6fd-e1a9885537af.png)
 
 **Model 2**: Model 2 with batch normalisation layers in the generator took slightly shorter to run, approximately 1.5 days. Batch normalisation in the generator did help stabalise training and improve computing. Results also seem to be better.
+
 ![image](https://user-images.githubusercontent.com/49399188/128222619-177a42e3-c7c4-4f57-8b91-b58af1d323e7.png)
 
 **Model 3**: Model 3 included batch normalisation in both the discriminator and generator and did not perform well at all. Batch normalisation in the discriminator affected training and the model losses hit 0 after ~ 3 epochs. My assumption is that batch normalisation hindered the training of the discriminator. The discriminator would benefit from varied inputs but perhaps batch normalisation oversimplified the training data. This could also be attributed to the nature of the small batch size and small training data. However, there was no similar case that I could reference to and this could be a possible expansion of the project to understand clearly how batch normalisation works.
